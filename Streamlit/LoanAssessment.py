@@ -8,16 +8,22 @@ from PIL import Image
 # Set default page configuration
 st.set_page_config(layout="wide", initial_sidebar_state='collapsed')
 
-# Display RoboAvsior image
-image = Image.open('../images/loanApporved.jpg')
+# Display  Image
+image = Image.open('./Images/LoanApproved.jpg')
 st.image(image)
 
-model = pickle.load(open('./model/model.pkl', 'rb'))
+# Import save Model & Scaler
+model = pickle.load(open('./../Model/Model.pkl', 'rb'))
+scaler = pickle.load(open('./../Scaler/Scaler.pkl','rb'))
+
+# Define list values
 revenue = ['< 2000', '2000 - 5000', '5000-10000', ' > 10000']
 operating_period = ['< 1 year', '1 year - 5 years', '5 years - 10 years', ' > 10 years']
 
 
 st.write("Let's start by entering below details")
+
+# Start of Form
 with st.form("layer1", clear_on_submit=False):
 
     # user_revenue = st.multiselect(
