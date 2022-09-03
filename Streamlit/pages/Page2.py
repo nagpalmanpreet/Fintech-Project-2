@@ -15,6 +15,9 @@ with col2:
 with col3:
     st.write(' ')
 
+st.write('\n')
+st.write('\n')
+st.write('\n')
 # Import saved Model & Scaler
 model = pickle.load(open('./../Model/model_rd.pkl', 'rb'))
 scaler = pickle.load(open('./../Scaler/Scaler.pkl', 'rb'))
@@ -35,7 +38,7 @@ for industry in industries:
 
 # Initialize Form
 with st.form("form2", clear_on_submit=False):
-    user_loan_amount = st.text_input('Please enter amount you want to borrow. Minimum Loan Amount is 5000 AUD & Maximum Loan Amount ia 100,000 AUD', value="")
+    user_loan_amount = st.text_input('Please enter amount you want to borrow. Minimum Loan Amount is 5000 AUD & Maximum Loan Amount is 100,000 AUD', value="")
     user_industry = st.selectbox('Select Industry', industries)
     globals()[user_industry] = 1
     user_zipCode = st.text_input('Please enter your office pincode', value="3000")

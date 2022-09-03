@@ -15,6 +15,10 @@ with col2:
 with col3:
     st.write(' ')
 
+st.write('\n')
+st.write('\n')
+st.write('\n')
+
 # Define dropdown values
 revenue = ('Less than 2000', '2000 - 5000',
            '5000-10000', ' Greater than 10000')
