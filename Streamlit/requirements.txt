@@ -2,4 +2,3 @@ pandas
 Pillow
 numpy
 pathlib
-pickle
