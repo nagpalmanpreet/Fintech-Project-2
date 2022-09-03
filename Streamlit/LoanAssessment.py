@@ -13,7 +13,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.write(' ')
 with col2:
-    image = Image.open('./Images/LoanApproved.jpeg')
+    image = Image.open('../Resources/Images/LoanApproved.png')
     st.image(image)
 with col3:
     st.write(' ')
