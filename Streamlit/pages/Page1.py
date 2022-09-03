@@ -2,6 +2,7 @@
 import streamlit as st
 import webbrowser
 import pickle
+from PIL import Image
 
 # Set default page configuration
 st.set_page_config(layout="wide", initial_sidebar_state='collapsed')
@@ -11,7 +12,9 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.write(' ')
 with col2:
-    st.image('./Images/LoanApproved.jpeg')
+    #st.image('./Images/LoanApproved.jpeg')
+    image = Image.open('./Images/LoanApproved.jpeg')
+    st.image(image)
 with col3:
     st.write(' ')
 
