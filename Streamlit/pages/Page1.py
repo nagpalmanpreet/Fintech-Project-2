@@ -32,8 +32,6 @@ with st.form("form1", clear_on_submit=False):
     user_revenue = st.selectbox('Monthly Revenue of your company', revenue)
     user_operating_period = st.selectbox(
         'How long you have been running this business', operating_period)
-
-
     user_active_abn = st.radio("Is your Business Active", ('Yes', 'No'))
 
 
@@ -41,8 +39,15 @@ with st.form("form1", clear_on_submit=False):
 
 if submitted:
     # Ineligible application
-    if user_revenue == 'Less than 2000' or operating_period == 'Less than a year' or user_active_abn == 'No':
-        colouredText('#cc0000','#cc0000','#ffffff','Sorry, you are not eligible for loan.')
+    if user_revenue == 'Less than 2000' or user_operating_period == 'Less than a year' or user_active_abn == 'No':        
+        if user_revenue == 'Less than 2000':
+            error_message = 'Monthly Revenue must be greater than 2000 AUD for loan eligibility. '
+        elif user_operating_period == 'Less than a year':
+            error_message = 'Your business should be atleast 1 year old'
+        else:
+            error_message = "You don't have an active business"
+        message = 'Sorry, you are not eligible for loan. ' + error_message
+        colouredText('#cc0000','#cc0000','#ffffff', message)
         st.stop()
     else:
         #Jump to next page
