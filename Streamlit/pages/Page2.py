@@ -54,48 +54,42 @@ with st.form("form2", clear_on_submit=False):
     user_taxReturn = st.text_input("How much tax you paid last year", value="")
     user_age = st.text_input('Please enter your age. Applicant must be 18 yrs old ', value="")
 
-    # Start of Validations
-    if len(user_loan_amount) == 0 or int(user_loan_amount) < 5000 or int(user_loan_amount) > 100000:
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter the correct amount. Minimum Loan Amount is 5000 AUD & Maximum Loan Amount ia 100,000 AUD')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_industry) == 0:
-        colouredText('#cc0000','#cc0000','#ffffff','Please select Industry')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_property) == 0:
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter if you own a property')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_businessHistory) == 0 or int(user_businessHistory) < 1:
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter how long you have been running this business')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_otherLoan) == 0:
-        colouredText('#cc0000','#cc0000','#ffffff','Please select existing Loan')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_netCash) == 0 or int(user_netCash) < 0:
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter cash in Bank')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_revenue) == 0 or int(user_revenue) < 2000 :
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter monthly revenue of your company. Minimum montly revenue should be 2000 AUD')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_taxReturn) == 0:
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter your last year tax returns')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    if len(user_age) == 0 or int(user_age) < 18:
-        colouredText('#cc0000','#cc0000','#ffffff','Please enter your age')
-        error = st.form_submit_button("Apply")
-        st.stop()
-    # End of validations
+    
 
     applied = st.form_submit_button("Apply")
     # Once form is submitted 
     if applied:
+
+        # Start of Validations
+        if len(user_loan_amount) == 0 or int(user_loan_amount) < 5000 or int(user_loan_amount) > 100000:
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter the correct amount. Minimum Loan Amount is 5000 AUD & Maximum Loan Amount is 100,000 AUD')
+            st.stop()
+        if len(user_industry) == 0:
+            colouredText('#cc0000','#cc0000','#ffffff','Please select Industry')            
+            st.stop()
+        if len(user_property) == 0:
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter if you own a property')           
+            st.stop()
+        if len(user_businessHistory) == 0 or int(user_businessHistory) < 1:
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter how long you have been running this business')            
+            st.stop()
+        if len(user_otherLoan) == 0:
+            colouredText('#cc0000','#cc0000','#ffffff','Please select existing Loan')            
+            st.stop()
+        if len(user_netCash) == 0 or int(user_netCash) < 0:
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter cash in Bank')        
+            st.stop()
+        if len(user_revenue) == 0 or int(user_revenue) < 2000 :
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter monthly revenue of your company. Minimum montly revenue should be 2000 AUD')    
+            st.stop()
+        if len(user_taxReturn) == 0:
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter your last year tax returns')   
+            st.stop()
+        if len(user_age) == 0 or int(user_age) < 18:
+            colouredText('#cc0000','#cc0000','#ffffff','Please enter your age')           
+            st.stop()
+        # End of validations
+
         if user_property =='Yes':
             user_property = 1
         else:
