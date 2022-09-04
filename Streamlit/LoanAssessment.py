@@ -77,10 +77,10 @@ st.image('../Resources/Images/ROC_DT.png')
 # ------------------------------         Display results for Deep Learning ------------------------------
 colouredText('#6699ff','#ff80d5','#ffffff','Deep Learning')
 st.subheader('Classification Report')
-data = {'precision': [0.99, 1.00],
-        'recall': [1.0, 0.99],
-        'f1-score': [0.99, 1.00],
-        'support': [3829, 8669]}
+data = {'precision': [0.70, 0.94],
+        'recall': [0.85, 0.87],
+        'f1-score': [0.76, 0.91],
+        'support': [3189, 9309]}
   
 # Creates pandas DataFrame.
 df = pd.DataFrame(data, index=['Default (0)',
